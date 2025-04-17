@@ -16,8 +16,19 @@ router.post('/', function(req, res, next) {
     if (confirmPassword !== password) {
         res.render('register', { error: 'Passwords do not match' });
     }
-    const data = fs.readFileSync(USERS_FILE);
-    const users = JSON.parse(data);
+
+    let users = [];
+
+    if (fs.existsSync(USERS_FILE)) {
+        const data = fs.readFileSync(USERS_FILE);
+        users = JSON.parse(data);
+    }
+
+    const emailExists = users.find(user => user.email === email);
+    if (emailExists) {
+        return res.render('register', { error: 'Email already registered' });
+    }
+
     users.push({ email, password });
     fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
     res.render('register', { error: null });
