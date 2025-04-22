@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const fs = require('fs');
+const bcrypt =  require("bcryptjs");
 
 const USERS_FILE = 'users.json';
 
@@ -10,8 +11,6 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
     const { email, password, confirmPassword } = req.body;
-
-    console.log(email, password, confirmPassword);
 
     if (confirmPassword !== password) {
         res.render('register', { error: 'Passwords do not match' });
@@ -29,9 +28,19 @@ router.post('/', function(req, res, next) {
         return res.render('register', { error: 'Email already registered' });
     }
 
-    users.push({ email, password });
+    if (password.length < 8) {
+        return res.render('register', { error: 'Password should contain 8 characters' });
+    }
+
+    const salt = bcrypt.genSaltSync(10);
+    const hashedPassword = bcrypt.hashSync(password, salt);
+
+    users.push({ email, password: hashedPassword });
     fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
-    res.render('register', { error: null });
+
+    req.session.user = { email }
+
+    res.redirect('/blogs');
 });
 
 module.exports = router;

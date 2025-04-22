@@ -1,26 +1,18 @@
 [
   {
-    "email": "efcdc@gmail.com",
-    "password": "666"
+    "email": "something1@gmail.com",
+    "password": "$2b$10$dxwfY2P0q3DA0YyiGoiG3.r8vYD8cPC.eX9yBXK6Kd9QEgotcskBS"
   },
   {
-    "email": "something@gmail.com",
-    "password": "12"
+    "email": "something123@gmail.com",
+    "password": "$2b$10$dYgyBt.tlAprqcMUPbD4ruVzbp8Aw/OjNKHPs5o6.3XLzizWB5XsW"
   },
   {
-    "email": "efcdc@gmail.com",
-    "password": "123"
+    "email": "123@gmail.com",
+    "password": "$2b$10$aBLNvLCKO0aFhpH7hozqf.oQPVmzKfeQ/Llek3Yc1B1Aou8Om91ua"
   },
   {
-    "email": "efcdc@gmail.com",
-    "password": "123"
-  },
-  {
-    "email": "efcdc@gmail.com",
-    "password": "123"
-  },
-  {
-    "email": "goat@gmail.com",
-    "password": "123"
+    "email": "1234@gmail.com",
+    "password": "$2b$10$DP0oqLSQcehP4p/qYIpH9uSz9oCIjMuP5SO1SuzEGGAjHVI7Ij6yS"
   }
 ]
