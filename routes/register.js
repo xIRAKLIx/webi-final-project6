@@ -6,6 +6,9 @@ const bcrypt =  require("bcryptjs");
 const USERS_FILE = 'users.json';
 
 router.get('/', function(req, res, next) {
+    if (req.session.user) {
+        return res.redirect('/');
+    }
     res.render('register', { error: null });
 });
 
