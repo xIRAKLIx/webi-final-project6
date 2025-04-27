@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Register</title>
-    <link rel="stylesheet" href="./stylesheets/auth.css">
+    <link rel="stylesheet" href="./stylesheets/register.css">
 </head>
 <body>
 <div class="form-container">
@@ -13,13 +13,15 @@
         <p class="error"><%= error %></p>
    <% } %>
     <form action="/register" method="POST">
-        <input type="email" name="email" placeholder="Email" required>
+        <input type="email" name="email" placeholder="Email" required autofocus>
         <input type="password" name="password" placeholder="Password" required>
         <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
         <button type="submit">Register</button>
     </form>
 
+    <div class="link">
     <p>Already have an account? <a href="/login">Login here</a>.</p>
+    </div>
 </div>
 
 </body>

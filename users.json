@@ -22,5 +22,9 @@
   {
     "email": "melo@gmail.com",
     "password": "$2b$10$Jpr5bKRB18wwBPXvJ7Bgz.ONxZKgJQbUgmaP/vdqkM/XBtz9mPCjC"
+  },
+  {
+    "email": "rrr@gmail.com",
+    "password": "$2b$10$dD12O2wMX1Xq9mIAkeEy8.Jbr0MG3n.G90tmA.eawSFZGr6HCf2GW"
   }
 ]
