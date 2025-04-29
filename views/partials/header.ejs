@@ -1,0 +1,42 @@
+<header class="container">
+    <div class="nav-wrapper">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/">Blog</a></li>
+                <li><a href="/">Projects</a></li>
+                <li><a href="/">About</a></li>
+                <li><a href="/">Newsletter</a></li>
+            </ul>
+        </nav>
+
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/">Blog</a>
+        <a href="/">Projects</a>
+        <a href="/">About</a>
+        <a href="/">Newsletter</a>
+        <figure class="close-btn-wrapper" id="close-btn-wrapper">
+            <img src="/images/close-icon.svg" alt="">
+        </figure>
+    </div>
+</header>
+
+<script>
+    const burger = document.getElementById('burger');
+    const closeBtn = document.getElementById('close-btn-wrapper');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    burger.addEventListener('click', () => {
+        mobileMenu.classList.toggle('show');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('show');
+    });
+</script>
