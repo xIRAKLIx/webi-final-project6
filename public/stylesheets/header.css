@@ -13,7 +13,7 @@ header {
     position: relative;
 }
 
-ul {
+.nav-list-wrapper{
     display: flex;
     gap: 30px;
     list-style: none;
@@ -21,7 +21,7 @@ ul {
     margin: 0;
 }
 
-a {
+.nav-link {
     color: #1A1A1A;
     font-family: Inter, sans-serif;
     font-size: 20px;

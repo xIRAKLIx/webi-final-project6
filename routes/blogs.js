@@ -8,35 +8,42 @@ const requireAuth = (req, res, next) => {
     if (req.session.user) {
         next()
     } else {
+        console.log('No user found.');
         res.redirect('/login');
     }
 }
 
-router.get('/', requireAuth, function(req, res, next) {
-    res.render('blogs');
+router.get('/', requireAuth, function (req, res, next) {
+    const blogs = JSON.parse(fs.readFileSync(BLOGS_FILE));
+
+    const email = req.session.user.email;
+
+    res.render('blogs', {blogs, email});
 });
 
-router.get('/new', requireAuth, function(req, res, next) {
-    res.render('new_blog', { error: null });
+router.get('/new', requireAuth, function (req, res, next) {
+    res.render('new_blog', {error: null});
 });
 
-router.post('/new', requireAuth, function(req, res, next) {
-    const { title, content } = req.body;
+router.post('/new', requireAuth, function (req, res, next) {
+    const {title, content} = req.body;
 
     if (!title || !content) {
-        res.render("new_blog", { error: "Missing title or content" });
+        res.render("new_blog", {error: "Missing title or content"});
     }
 
-
     const blogs = JSON.parse(fs.readFileSync(BLOGS_FILE));
-    // const newBlog = {
-    //     id: String(Date.now()),
-    //     title,
-    //     content,
-    //     author
-    // }
-    console.log(req.session.user.email);
-    res.render('new_blog', { error: null });
+    const newBlog = {
+        id: String(Date.now()),
+        title,
+        content,
+        author: req.session.user.email,
+        date: new Date().toLocaleString()
+    }
+
+    blogs.push(newBlog);
+    fs.writeFileSync(BLOGS_FILE, JSON.stringify(blogs, null, 2));
+    res.redirect('/blogs');
 });
 
 module.exports = router;

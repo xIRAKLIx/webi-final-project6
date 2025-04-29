@@ -6,13 +6,35 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Blog</title>
+    <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="/stylesheets/blogs.css">
 </head>
 <body>
 
+<%- include('partials/header', {email: email}); %>
+
+<div class="container">
     <h2>All Blogs</h2>
-    <a href="/blogs/new">Create New Blog</a>
+    <a class="btn" href=/logout>Log Out</a>
     <br>
-    <a href="/logout">Log Out</a>
+    <a class="btn" href="/blogs/new">Create New Blog</a>
+
+    <ul class="blog-list">
+        <% blogs.forEach(blog => { %>
+            <li class="blog-item">
+                <h3>
+                    <a href="/blog/<%= blog.id %>" class="blog-title">
+
+                        <%= blog.title %>
+                    </a>
+                    <p class="blog-meta">
+                        By <%= blog.author %> on <%= blog.date %>
+                    </p>
+                </h3>
+            </li>
+        <% }) %>
+    </ul>
+</div>
 
 </body>
 </html>
