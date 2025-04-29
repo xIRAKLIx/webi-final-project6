@@ -6,24 +6,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Blog</title>
-    <link rel="stylesheet" href="./stylesheets/blogs.css">
 </head>
 <body>
 
-<h1>All Blogs</h1>
-
-<% blogs.forEach(blog => { %>
-    <div class="post">
-        <h2><a href="/blogs/<%= blog.id %>"><%= blog.title %></a></h2>
-        <p><%= blog.content.substring(0, 100) %>...</p>
-    </div>
-<% }) %>
-
-<div class="top-links">
-<a href="/blogs/new">Create New Blog</a>
-<a href="/logout">Log Out</a>
-</div>
-
+    <h2>All Blogs</h2>
+    <a href="/blogs/new">Create New Blog</a>
+    <br>
+    <a href="/logout">Log Out</a>
 
 </body>
 </html>
