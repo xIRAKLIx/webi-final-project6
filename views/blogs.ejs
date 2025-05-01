@@ -5,36 +5,110 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blog</title>
+    <title>The Blog | Home</title>
     <link rel="stylesheet" href="/stylesheets/header.css">
     <link rel="stylesheet" href="/stylesheets/blogs.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sen:wght@400..800&display=swap"
+          rel="stylesheet">
+    <link rel="shortcut icon" href="./images/blog-icon.svg" type="image/x-icon">
 </head>
 <body>
 
 <%- include('partials/header', {email: email}); %>
 
-<div class="container">
-    <h2>All Blogs</h2>
-    <a class="btn" href=/logout>Log Out</a>
-    <br>
-    <a class="btn" href="/blogs/new">Create New Blog</a>
+<div class="blog-container">
+    <h2 class="title container">THE BLOG</h2>
+    <!--    <a class="btn" href=/logout>Log Out</a>-->
+    <!--    <a class="btn" href="/blogs/new">Create New Blog</a>-->
 
-    <ul class="blog-list">
-        <% blogs.forEach(blog => { %>
-            <li class="blog-item">
-                <h3>
-                    <a href="/blog/<%= blog.id %>" class="blog-title">
+    <!--    <ul class="blog-list">-->
+    <!--        <% blogs.forEach(blog => { %>-->
+    <!--            <li class="blog-item">-->
+    <!--                <h3>-->
+    <!--                    <a href="/blog/<%= blog.id %>" class="blog-title">-->
 
-                        <%= blog.title %>
-                    </a>
-                    <p class="blog-meta">
-                        By <%= blog.author %> on <%= blog.date %>
-                    </p>
-                </h3>
-            </li>
-        <% }) %>
-    </ul>
+    <!--                        <%= blog.title %>-->
+    <!--                    </a>-->
+    <!--                    <p class="blog-meta">-->
+    <!--                        By <%= blog.author %> on <%= blog.date %>-->
+    <!--                    </p>-->
+    <!--                </h3>-->
+    <!--            </li>-->
+    <!--        <% }) %>-->
+    <!--    </ul>-->
 </div>
 
+<section class="recent-blogs container">
+    <h3 class="recent-blogs-title">Recent blog posts</h3>
+    <div class="recent-blogs-content">
+        <div class="primary-card">
+            <figure>
+                <a href="/blog/<%= blogs[0].id %>">
+                    <img class="primary-card-img" src="/images/thumbnails/wide/1.png" alt="thumbnail">
+                </a>
+            </figure>
+            <div>
+                <p class="author-date-label"><%= blogs[0].author %> • <%= blogs[0].date %></p>
+            </div>
+            <a href="/blog/<%= blogs[0].id %>">
+                <div class="main-blog-title-wrapper">
+                    <h3 class="main-blog-title"><%= blogs[0].title %></h3>
+                    <figure>
+                        <img src="/images/arrow-up-right.svg" alt="arrow-up-right">
+                    </figure>
+                </div>
+            </a>
+            <div class="main-blog-text-wrapper">
+                <p class="main-blog-text">
+                    <%= blogs[0].content %>
+                </p>
+            </div>
+        </div>
+        <div class="secondary-card">
+            <div class="secondary-blog-wrapper">
+                <a href="/blog/<%= blogs[1].id %>">
+                    <figure>
+                        <img class="secondary-blog-img" src="/images/thumbnails/1.png" alt="thumbnail">
+                    </figure>
+                </a>
+
+                <div>
+                    <div>
+                        <p style="margin-top: 0" class="author-date-label"><%= blogs[1].author.slice(0, 8) %>
+                            • <%= blogs[1].date %></p>
+                    </div>
+                    <a href="/blog/<%= blogs[1].id %>">
+                        <h3 class="secondary-blog-title">
+                            <%= blogs[1].title %>
+                        </h3>
+                    </a>
+                    <p class="secondary-blog-text"><%= blogs[1].content %></p>
+                </div>
+            </div>
+            <div class="secondary-blog-wrapper">
+                <a href="/blog/<%= blogs[2].id %>">
+                    <figure>
+                        <img class="secondary-blog-img" src="/images/thumbnails/2.png" alt="thumbnail">
+                    </figure>
+                </a>
+                <div>
+                    <div>
+                        <p style="margin-top: 0" class="author-date-label"><%= blogs[2].author.slice(0, 8) %>
+                            • <%= blogs[2].date %></p>
+                    </div>
+                    <a href="/blog/<%= blogs[2].id %>">
+                        <h3 class="secondary-blog-title">
+                            <%= blogs[2].title %>
+                        </h3>
+                    </a>
+                    <p class="secondary-blog-text"><%= blogs[2].content %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 </body>
 </html>
