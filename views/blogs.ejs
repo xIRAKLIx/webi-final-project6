@@ -21,24 +21,6 @@
 
 <div class="blog-container">
     <h2 class="title container">THE BLOG</h2>
-    <!--    <a class="btn" href=/logout>Log Out</a>-->
-    <!--    <a class="btn" href="/blogs/new">Create New Blog</a>-->
-
-    <!--    <ul class="blog-list">-->
-    <!--        <% blogs.forEach(blog => { %>-->
-    <!--            <li class="blog-item">-->
-    <!--                <h3>-->
-    <!--                    <a href="/blog/<%= blog.id %>" class="blog-title">-->
-
-    <!--                        <%= blog.title %>-->
-    <!--                    </a>-->
-    <!--                    <p class="blog-meta">-->
-    <!--                        By <%= blog.author %> on <%= blog.date %>-->
-    <!--                    </p>-->
-    <!--                </h3>-->
-    <!--            </li>-->
-    <!--        <% }) %>-->
-    <!--    </ul>-->
 </div>
 
 <section class="recent-blogs container">
@@ -51,7 +33,7 @@
                 </a>
             </figure>
             <div>
-                <p class="author-date-label"><%= blogs[0].author %> • <%= blogs[0].date %></p>
+                <p class="author-date-label"><%= blogs[0].author %> • <%= blogs[0].formatedDate %></p>
             </div>
             <a href="/blog/<%= blogs[0].id %>">
                 <div class="main-blog-title-wrapper">
@@ -63,7 +45,7 @@
             </a>
             <div class="main-blog-text-wrapper">
                 <p class="main-blog-text">
-                    <%= blogs[0].content %>
+                    <%= blogs[0].description.slice(0, 260) %>...
                 </p>
             </div>
         </div>
@@ -78,14 +60,14 @@
                 <div>
                     <div>
                         <p style="margin-top: 0" class="author-date-label"><%= blogs[1].author.slice(0, 8) %>
-                            • <%= blogs[1].date %></p>
+                            • <%= blogs[1].formatedDate %></p>
                     </div>
                     <a href="/blog/<%= blogs[1].id %>">
                         <h3 class="secondary-blog-title">
-                            <%= blogs[1].title %>
+                            <%= blogs[1].title.slice(0, 20) %>
                         </h3>
                     </a>
-                    <p class="secondary-blog-text"><%= blogs[1].content %></p>
+                    <p class="secondary-blog-text"><%= blogs[1].description.slice(0, 136) %></p>
                 </div>
             </div>
             <div class="secondary-blog-wrapper">
@@ -97,14 +79,14 @@
                 <div>
                     <div>
                         <p style="margin-top: 0" class="author-date-label"><%= blogs[2].author.slice(0, 8) %>
-                            • <%= blogs[2].date %></p>
+                            • <%= blogs[2].formatedDate %></p>
                     </div>
                     <a href="/blog/<%= blogs[2].id %>">
                         <h3 class="secondary-blog-title">
-                            <%= blogs[2].title %>
+                            <%= blogs[2].title.slice(0, 20) %>
                         </h3>
                     </a>
-                    <p class="secondary-blog-text"><%= blogs[2].content %></p>
+                    <p class="secondary-blog-text"><%= blogs[2].description.slice(0, 136) %></p>
                 </div>
             </div>
         </div>

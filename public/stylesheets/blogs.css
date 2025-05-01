@@ -164,6 +164,7 @@
 }
 
 .secondary-blog-wrapper {
+    width: 100%;
     display: flex;
     gap: 2rem;
 }
@@ -183,6 +184,7 @@
 }
 
 .secondary-blog-title {
+    width: 100%;
     margin-top: 12px;
     color: #1A1A1A;
     font-family: Inter, sans-serif;
@@ -191,7 +193,6 @@
     font-weight: 600;
     line-height: 28px;
     overflow: hidden;
-    white-space: nowrap;
     text-overflow: ellipsis;
 }
 
