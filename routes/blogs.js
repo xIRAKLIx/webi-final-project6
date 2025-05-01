@@ -27,19 +27,42 @@ router.get('/new', requireAuth, function (req, res, next) {
 });
 
 router.post('/new', requireAuth, function (req, res, next) {
-    const {title, content} = req.body;
+    const {title, description, content} = req.body;
 
     if (!title || !content) {
         res.render("new_blog", {error: "Missing title or content"});
     }
 
     const blogs = JSON.parse(fs.readFileSync(BLOGS_FILE));
+    const currentDate = new Date();
+    const currentDay = currentDate.getDate();
+    const currentMonth = currentDate.getMonth();
+    const currentYear = currentDate.getFullYear();
+    const months = [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec'
+    ];
+    const currentMonthString = months[currentMonth];
+    console.log(currentDay, currentMonthString, currentYear);
+    const formatedDate = `${currentDay} ${currentMonthString} ${currentYear}`;
     const newBlog = {
         id: String(Date.now()),
         title,
+        description,
         content,
         author: req.session.user.email,
-        date: new Date().toLocaleString()
+        date: new Date().toLocaleString(),
+        formatedDate
     }
 
     blogs.unshift(newBlog);
