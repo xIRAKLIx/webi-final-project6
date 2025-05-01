@@ -53,7 +53,6 @@ router.post('/new', requireAuth, function (req, res, next) {
         'Dec'
     ];
     const currentMonthString = months[currentMonth];
-    console.log(currentDay, currentMonthString, currentYear);
     const formatedDate = `${currentDay} ${currentMonthString} ${currentYear}`;
     const newBlog = {
         id: String(Date.now()),
