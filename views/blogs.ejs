@@ -112,5 +112,22 @@
         </div>
     </div>
 </section>
+<section class="all-blogs container">
+    <h3 class="recent-blogs-title">All blog posts</h3>
+    <div class="all-blogs-grid">
+        <% blogs.forEach((blog, index)=>{ %>
+            <div class="all-blogs-card">
+                <figure>
+                    <img src="/images/thumbnails/normal/<%= index %>.png" alt="thumbnail">
+                </figure>
+                <div>
+                    <p class="author-date-label"><%= blog.author %> • <%= blog.formatedDate %></p>
+                </div>
+                <h3 class="all-blogs-card-title"><%= blog.title.slice(0, 20) %> </h3>
+                <p class="all-blogs-card-text"><%= blog.description.slice(0, 90) %> </p>
+            </div>
+        <% }) %>
+    </div>
+</section>
 </body>
 </html>
