@@ -22,7 +22,8 @@ router.get('/', requireAuth, function (req, res, next) {
 });
 
 router.get('/new', requireAuth, function (req, res, next) {
-    res.render('new_blog', {error: null});
+    const email = req.session.user.email;
+    res.render('new_blog', {error: null, email});
 });
 
 router.post('/new', requireAuth, function (req, res, next) {
@@ -41,7 +42,7 @@ router.post('/new', requireAuth, function (req, res, next) {
         date: new Date().toLocaleString()
     }
 
-    blogs.push(newBlog);
+    blogs.unshift(newBlog);
     fs.writeFileSync(BLOGS_FILE, JSON.stringify(blogs, null, 2));
     res.redirect('/blogs');
 });

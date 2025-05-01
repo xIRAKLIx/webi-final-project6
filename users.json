@@ -24,7 +24,15 @@
     "password": "$2b$10$Jpr5bKRB18wwBPXvJ7Bgz.ONxZKgJQbUgmaP/vdqkM/XBtz9mPCjC"
   },
   {
+    "email": "admin@gmail.com",
+    "password": "$2b$10$ww3UlEt5LRXWIrMVoI2JOudDxrGu3XEVmRjvbPLgSS2jKx4D83tG."
+  },
+  {
     "email": "hello12345@gmail.com",
     "password": "$2b$10$GrkerIqPxp1LrKE3GzPuxurzTsAXIpt8BFd1cD091BLjXM95Xcsqe"
+  },
+  {
+    "email": "test@test.com",
+    "password": "$2b$10$YH6GdYRGpCLAAUzVosuZsu/9KyuhG4.YnmzgESkrQiYA2LGLak4O."
   }
 ]
