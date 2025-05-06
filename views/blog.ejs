@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Blog | blogTitle</title>
+    <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="/stylesheets/blog.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sen:wght@400..800&display=swap"
+          rel="stylesheet">
+    <link rel="shortcut icon" href="./images/blog-icon.svg" type="image/x-icon">
+</head>
+<body>
+    <%- include('partials/header', {email: email}); %>
+
+    <div class="container blog-wrapper">
+        <div class="recent-blogs">
+            <h2 class="recent-blogs-title">Recent blog posts</h2>
+
+            <div class="recent-blogs-content">
+                <% blogs.splice(0, 6).forEach((blog, index)=>{ %>
+                    <div class="">
+                        <figure>
+                            <img class="" src="/images/thumbnails/normal/<%= index %>.png" alt="thumbnail">
+                        </figure>
+                        <div>
+                            <p class=""><%= blog.author %> • <%= blog.formatedDate %></p>
+                        </div>
+                        <a href="/blogs/<%= blog.id %>">
+                            <h3 class=""><%= blog.title.slice(0, 20) %> </h3>
+                        </a>
+                        <p class=""><%= blog.description.slice(0, 90) %> </p>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+
+        <div class="blog-content">
+            <p class="blog-date"><%= blog.formatedDate %></p>
+
+            <h2 class="blog-title"><%= blog.title %></h2>
+
+            <p class="blog-text"><%= blog.content %></p>
+        </div>
+    </div>
+
+</body>
+</html>

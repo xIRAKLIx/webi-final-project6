@@ -30,3 +30,11 @@ ul {
     padding-inline: 50px;
   }
 }
+
+
+@media (max-width: 768px) {
+  .container {
+    padding-inline: 25px;
+  }
+}
+

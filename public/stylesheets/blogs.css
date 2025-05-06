@@ -293,7 +293,23 @@ body {
 
 .all-blogs-grid {
     margin-top: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
 }
+
+@media (max-width: 768px) {
+    .all-blogs-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .all-blogs-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 .all-blogs-card-text {
     max-width: 384px;
@@ -306,12 +322,17 @@ body {
     margin-top: 12px;
 }
 
-.all-blogs-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 32px;
+.all-blogs-card {
+    width: 100%;
 }
 
-.all-blogs-card {
-    width: 384px;
+.all-blogs-img {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    /*.all-blogs-img {*/
+    /*    height: 140px;*/
+    /*    object-fit: cover;*/
+    /*}*/
 }
