@@ -42,5 +42,9 @@
   {
     "email": "iraklilt@gmail.com",
     "password": "$2b$10$uO/FWD1iacedogj5UbvIYOsDUosdFZyoqC3BsrITcH03p.ntbQ7ru"
+  },
+  {
+    "email": "123456789@gmail.com",
+    "password": "$2b$10$cqkQPFy86AXmq34p9Pyd7eHt121ZZRpCeyKRfuXSPOHsRKf4oWZ.2"
   }
 ]

@@ -69,4 +69,17 @@ router.post('/new', requireAuth, function (req, res, next) {
     res.redirect('/blogs');
 });
 
+router.get('/:blogId', requireAuth, function (req, res, next) {
+    const email = req.session.user.email;
+    const { blogId } = req.params
+
+    const data = fs.readFileSync(BLOGS_FILE)
+    const blogs = JSON.parse(data);
+
+    const blog = blogs.find(blog => blog.id === blogId);
+    console.log(blog);
+
+    res.render('blog', { email, blogs, blog });
+});
+
 module.exports = router;
