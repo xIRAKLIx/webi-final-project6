@@ -91,6 +91,43 @@
             </div>
         </div>
     </div>
+    <div class="recent-blogs-content-below-card">
+        <figure class="recent-blogs-content-below-card-img-wrapper">
+            <img class="recent-blogs-content-below-card-img" src="/images/thumbnails/wide/2.png" alt="">
+        </figure>
+        <div class="recent-blogs-content-below-card-content">
+            <p style="margin-top: 0" class="author-date-label"><%= blogs[3].author %>
+                • <%= blogs[3].formatedDate %></p>
+            <a href="/blog/<%= blogs[3].id %>">
+                <div class="recent-blogs-content-below-card-title-wrapper">
+                    <h3 class="recent-blogs-content-below-card-title"><%= blogs[3].title.slice(0, 20) %></h3>
+                    <figure>
+                        <img src="/images/arrow-up-right.svg" alt="arrow-up-right">
+                    </figure>
+                </div>
+            </a>
+            <p class="recent-blogs-content-below-card-text">
+                <%= blogs[3].description.slice(0, 260) %>
+            </p>
+        </div>
+    </div>
+</section>
+<section class="all-blogs container">
+    <h3 class="recent-blogs-title">All blog posts</h3>
+    <div class="all-blogs-grid">
+        <% blogs.forEach((blog, index)=>{ %>
+            <div class="all-blogs-card">
+                <figure>
+                    <img src="/images/thumbnails/normal/<%= index %>.png" alt="thumbnail">
+                </figure>
+                <div>
+                    <p class="author-date-label"><%= blog.author %> • <%= blog.formatedDate %></p>
+                </div>
+                <h3 class="all-blogs-card-title"><%= blog.title.slice(0, 20) %> </h3>
+                <p class="all-blogs-card-text"><%= blog.description.slice(0, 90) %> </p>
+            </div>
+        <% }) %>
+    </div>
 </section>
 </body>
 </html>
