@@ -2,12 +2,117 @@ body {
     background: #090D1F;
 }
 
+
 .nav-link {
     color: #FFFFFF;
 }
 
-.blog-container {
+.about-container{
     display: flex;
     align-items: center;
     flex-direction: column;
+    object-fit: cover;
+    width: 100%;
+}
+
+.title {
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    font-family: Inter, sans-serif;
+    font-size: 140px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border-top: 1px solid rgb(145, 145, 145);
+    border-bottom: 1px solid rgb(145, 145, 145);
+    margin-top: 50px;
+    width: 100%;
+    object-fit: cover;
+}
+.profile-image {
+    margin-top: 40px;
+    object-fit: cover;
+}
+
+.profile-image img {
+    width: 600px;
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+}
+
+.about-section {
+    max-width: 800px;
+    margin-top: 40px;
+    color: #FFFFFF;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.about-section h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #FFFFFF;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 5px;
+}
+
+.about-section ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.about-section ul li {
+    margin-bottom: 10px;
+}
+
+.about-section footer {
+    margin-top: 40px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+}
+
+.about-section footer a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.about-section footer a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    .title {
+        font-size: 100px;
+        padding: 0 10px;
+    }
+
+    .profile-image img {
+        height: auto;
+    }
+
+
+    .about-section {
+        padding: 0 20px;
+        font-size: 20px;
+    }
+
+    .about-section h3 {
+        font-size: 25px;
+    }
+
+    .about-section footer {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .title {
+        font-size: 60px;
+
+    }
 }
